@@ -1,0 +1,6 @@
+spring:
+  # データソース定義は省略
+  graphql:
+    graphiql:
+      enabled: true
+      path: /graphiqls
