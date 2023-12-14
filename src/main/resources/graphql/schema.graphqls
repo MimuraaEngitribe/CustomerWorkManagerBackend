@@ -1,8 +1,8 @@
 type Query {
-    companies: [Company]
+    getCompanies(id: ID): Company
 }
 
 type Company {
+    id: ID!
     name: String
-    id: String
 }
