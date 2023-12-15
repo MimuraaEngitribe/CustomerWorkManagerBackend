@@ -1,13 +1,17 @@
 package com.customer_worker_manager_group.customer_worker_manager_artifact;
 
-import org.springframework.data.annotation.Id;
+import java.io.Serializable;
 
+import jakarta.persistence.Id;
+
+import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
-public class Company {
+@Entity
+public class Company implements Serializable{
     @Id
     private String id;
     private String name;

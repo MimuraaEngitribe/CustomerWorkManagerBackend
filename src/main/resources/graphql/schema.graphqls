@@ -1,5 +1,5 @@
 type Query {
-    getCompanies(id: ID): Company
+    getCompanies(id: ID): String
 }
 
 type Company {
