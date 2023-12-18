@@ -1,8 +1,9 @@
-type Query {
-    getCompanies(id: ID): String
-}
-
 type Company {
     id: ID!
-    name: String
+    name: String!
+}
+
+type Query {
+    getCompanies: [Company]
+    getCompanyByName(name: String!): Company
 }
