@@ -1,0 +1,9 @@
+type Company {
+    id: ID!
+    name: String!
+}
+
+type Query {
+    getCompanies: [Company]
+    getCompanyByName(name: String!): Company
+}

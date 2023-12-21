@@ -1,0 +1,20 @@
+server:
+    port: 8080
+
+spring:
+  # データソース定義は省略
+  graphql:
+    graphiql:
+      enabled: true
+      path: /graphiqls
+    path: /graphql
+    # cors:
+    #   allowed-headers: "*"
+    #   allowed-methods: "*"
+    #   allowed-origins: "*"
+
+# management:
+#   endpoints:
+#     web:
+#       cors:
+#         allowed-origins: "*"
