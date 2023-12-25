@@ -2,11 +2,19 @@ package com.customer_worker_manager_group.customer_worker_manager_artifact;
 
 import java.io.Serializable;
 
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import jakarta.persistence.Id;
+import jakarta.persistence.Entity;
+import lombok.Data;
+
+@Data
+@Entity
 public class Company implements Serializable{
-    private String name;
+    @Id
     private String id;
+    private String name;
 
     public Company(){
         this.name = "";

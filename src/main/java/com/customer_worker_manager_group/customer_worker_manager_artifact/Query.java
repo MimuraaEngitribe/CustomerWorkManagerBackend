@@ -16,6 +16,9 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 public class Query implements GraphQLQueryResolver {
     private static final String JSON_FILE_PATH = "company.json";
+
+	private CompanyMapper mapper = new CompanyMapper();
+
     @QueryMapping
     public List<Company> getCompanies() {
         // TODO: 最終的にはリポジトリから取得するように変更する
@@ -47,5 +50,13 @@ public class Query implements GraphQLQueryResolver {
         } catch (IOException e) {
             throw new RuntimeException("Error reading companies JSON file", e);
         }
+    }
+
+    public List<Company> selectAllCompanyOnDatabase(){
+        return mapper.selectAll();
+    }
+
+    public Company getCompanyByNameOnDatabase(String name){
+        return mapper.selectCompanyByName(name);
     }
 }

@@ -8,6 +8,18 @@ spring:
       enabled: true
       path: /graphiqls
     path: /graphql
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url:
+      jdbc:mysql://localhost:3306/Company?serverTimezone=JST&characterEncoding=UTF-8
+    username: root
+    password: memo0413
+  jpa:
+    database: MYSQL
+    hibernate:
+      ddl-auto: update
+
+
     # cors:
     #   allowed-headers: "*"
     #   allowed-methods: "*"
