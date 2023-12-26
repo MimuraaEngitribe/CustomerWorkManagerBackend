@@ -3,21 +3,29 @@ package com.customer_worker_manager_group.customer_worker_manager_artifact;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import lombok.RequiredArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
+@RequiredArgsConstructor
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 public class Query implements GraphQLQueryResolver {
     private static final String JSON_FILE_PATH = "company.json";
 
-	private CompanyMapper mapper = new CompanyMapper();
+	private final CompanyService companyService;
 
     @QueryMapping
     public List<Company> getCompanies() {
@@ -52,11 +60,8 @@ public class Query implements GraphQLQueryResolver {
         }
     }
 
-    public List<Company> selectAllCompanyOnDatabase(){
-        return mapper.selectAll();
-    }
-
-    public Company getCompanyByNameOnDatabase(String name){
-        return mapper.selectCompanyByName(name);
+    @QueryMapping
+    public List<Company> selectAllCompanyOnDatabase() {
+        return companyService.selectAll();
     }
 }
