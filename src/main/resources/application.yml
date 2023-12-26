@@ -1,0 +1,40 @@
+server:
+    port: 8080
+
+spring:
+  # データソース定義は省略
+  graphql:
+    graphiql:
+      enabled: true
+      path: /graphiqls
+    path: /graphql
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
+      encoding: utf-8
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url:
+      jdbc:mysql://localhost:3306/Company
+    username: root
+    password: memo0413
+  jpa:
+    database: MYSQL
+    hibernate:
+      ddl-auto: update
+
+mybatis:
+  type-aliases-package: jp.customer_worker_manager_group.customer_worker_manager_artifact
+
+    # cors:
+    #   allowed-headers: "*"
+    #   allowed-methods: "*"
+    #   allowed-origins: "*"
+
+# management:
+#   endpoints:
+#     web:
+#       cors:
+#         allowed-origins: "*"

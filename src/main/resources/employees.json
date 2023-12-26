@@ -1,0 +1,23 @@
+[
+    {
+      "name": "佐藤",
+      "status": "未配属",
+      "startDate": "2001-01-01",
+      "endDate": "2002-12-31",
+      "companyID":"55555"
+    },
+    {
+        "name": "清水",
+        "status": "配属",
+        "startDate": "2010-01-01",
+        "endDate": "2010-12-31",
+        "companyID":"66666"
+    },
+    {
+        "name": "墨田",
+        "status": "未配属",
+        "startDate": "2015-01-01",
+        "endDate": "2015-12-31",
+        "companyID":"77777"
+    }
+]
